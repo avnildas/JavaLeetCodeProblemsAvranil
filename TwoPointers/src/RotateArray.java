@@ -43,10 +43,10 @@ public class RotateArray {
 
     public static int[] rotateArray(int[] nums, int k) {
 
-        k %= nums.length;
-        reverseArray(0, nums.length - 1, nums);
-        reverseArray(0, k - 1, nums);
-        reverseArray(k, nums.length - 1, nums);
+        k %= nums.length; //when k > nums.length
+        reverseArray(0, nums.length - 1, nums);//reverse the whole array
+        reverseArray(0, k - 1, nums); //reverse form start till k
+        reverseArray(k, nums.length - 1, nums); //reverse from k till end.
 
         return nums;
     }
